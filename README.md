@@ -4,6 +4,12 @@ Mobile JavaScript Application Development
 This repository contains the code of the "Mobile JavaScript Application
 Development" book by Adrian Kosmaczewski, published by O'Reilly.
 
+Installation
+------------
+
+Run the `install.sh` script to download all the required libraries from
+their respective repositories.
+
 PhoneGap Kitchen Sink
 ---------------------
 
