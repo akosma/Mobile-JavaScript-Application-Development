@@ -10,8 +10,10 @@ PhoneGap Kitchen Sink
 The PhoneGap chapter of the book references the [PhoneGap Kitchen Sink
 Project][3] by Jens-Christian Fischer.
 
-Links
------
+Buy the Book
+------------
+
+You can buy a copy of the book at these locations:
 
 - [O'Reilly][1]
 - [Amazon][2]
