@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="pragma" content="no-cache">        
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+        user-scalable=no">
+        <meta http-equiv="expires" content="-1" />
+        <link rel="stylesheet" href="/libs/jqm/jquery.mobile-1.0.1.min.css">
+        <script src="/libs/jqm/jquery-1.7.1.min.js"></script>
+        <script src="/libs/jqm/jquery.mobile-1.0.1.min.js"></script>
+        <script src="app.js"></script>
+        <title>Task List</title>
+    </head>
+
+    <body>
+
+        <div data-role="page" id="indexPage">
+
+
+            <div data-role="header">
+                <a href="about.html" data-rel="dialog" 
+                    data-transition="fade">About</a>
+                <h1>Task List</h1>
+                <a href="form.html" id="addTaskButton" data-role="button" 
+                    data-icon="plus">New</a>
+            </div>
+
+            <div data-role="content">
+
+                <ul data-role="listview" id="taskList" data-inset="true"
+                    data-filter="true">
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
+

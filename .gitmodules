@@ -1,0 +1,3 @@
+[submodule "PhoneGap/pgkitchensink"]
+	path = PhoneGap/pgkitchensink
+	url = git://github.com/jcfischer/pgkitchensink.git

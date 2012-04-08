@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+        user-scalable=no">
+        <link rel="stylesheet" href="jqm/jquery.mobile-1.0.1.min.css">
+        <script src="jquery-1.7.1.min.js"></script>
+        <script src="jqm/jquery.mobile-1.0.1.min.js"></script>
+        <script src="app.js"></script>
+        <title>Task List</title>
+    </head>
+
+    <body>
+
+        <div data-role="page" id="formPage">
+
+
+            <div data-role="header">
+                <a data-icon="back" data-rel="back"
+                    data-direction="reverse">Cancel</a>
+
+                <h1>Update Task</h1>
+
+                <a id="saveButton" data-icon="check" 
+                    data-direction="reverse">Save</a>
+            </div>
+
+            <div data-role="content">
+                <form action="">
+                    <ul data-role="listview">
+                        <li data-role="list-divider">Task Details:</li>
+                        <li data-role="fieldcontain">
+                            <label for="taskName">Name:</label>
+                            <input type="text" name="taskName" 
+                            id="taskName" value="">
+                        </li>
+
+                        <li data-role="fieldcontain">
+                            <label for="taskDescription">Description</label>
+                            <textarea name="taskDescription"
+                                id="taskDescription">
+                            </textarea>
+                        </li>
+
+                        <li data-role="fieldcontain">
+                            <label for="taskCompleted">Completed:</label>
+                            <select name="taskCompleted" id="taskCompleted"
+                                data-role="slider">
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </li>
+
+                        
+                        <li data-role="list-divider">Actions:</li>
+                        <li>
+                            <a data-role="button" data-rel="dialog"
+                                data-icon="delete" data-transition="fade"
+                                id="deleteButton" href="delete.html">Delete this task</a>
+                        </li>
+
+                    </ul>
+                </form>
+            </div>
+
+
+        </div>
+
+    </body>
+</html>
+
