@@ -4,6 +4,12 @@ Mobile JavaScript Application Development
 This repository contains the code of the "Mobile JavaScript Application
 Development" book by Adrian Kosmaczewski, published by O'Reilly.
 
+PhoneGap Kitchen Sink
+---------------------
+
+The PhoneGap chapter of the book references the [PhoneGap Kitchen Sink
+Project][3] by Jens-Christian Fischer.
+
 Links
 -----
 
@@ -39,4 +45,5 @@ License
 
 [1]:http://shop.oreilly.com/product/0636920025252.do
 [2]:http://www.amazon.com/Mobile-JavaScript-Application-Development-Kosmaczewski/dp/1449327850
+[3]:https://github.com/jcfischer/pgkitchensink
 
