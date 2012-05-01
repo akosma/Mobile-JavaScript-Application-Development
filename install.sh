@@ -33,13 +33,13 @@ echo "#"
 echo "# Downloading jQuery Mobile"
 echo "#"
 echo "###############################"
-curl http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.zip --output $LIBS/jqm.zip
+curl http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.zip --output $LIBS/jqm.zip
 
 # Extract zip file contents
 unzip $LIBS/jqm.zip -d $LIBS
 
 # Rename the folder
-mv $LIBS/jquery.mobile-1.0.1 $LIBS/jqm/
+mv $LIBS/jquery.mobile-1.1.0 $LIBS/jqm/
 
 # Remove the zip file
 rm $LIBS/jqm.zip
@@ -56,13 +56,13 @@ echo "#"
 echo "# Downloading Sencha Touch"
 echo "#"
 echo "###############################"
-curl http://cdn.sencha.io/touch/sencha-touch-2.0.0-gpl.zip --output $LIBS/sencha.zip
+curl http://cdn.sencha.io/touch/sencha-touch-2.0.1-gpl.zip --output $LIBS/sencha.zip
 
 # Extract the contents of the zip file
 unzip $LIBS/sencha.zip -d $LIBS
 
 # Rename the folder
-mv $LIBS/sencha-touch-2.0.0-gpl/ $LIBS/sencha/
+mv $LIBS/sencha-touch-2.0.1/ $LIBS/sencha/
 
 # Remove the zip file
 rm $LIBS/sencha.zip
@@ -76,13 +76,13 @@ echo "#"
 echo "# Downloading PhoneGap"
 echo "#"
 echo "###############################"
-curl https://github.com/phonegap/phonegap/zipball/1.5.0 --location --output $LIBS/phonegap.zip
+curl https://github.com/phonegap/phonegap/zipball/1.7.0rc1 --location --output $LIBS/phonegap.zip
 
 # Extract the contents of the zip file
 unzip $LIBS/phonegap.zip -d $LIBS
 
 # Rename the folder
-mv $LIBS/phonegap-phonegap-de1960d/ $LIBS/phonegap
+mv $LIBS/phonegap-phonegap-1564354/ $LIBS/phonegap
 
 # Remove the zip file
 rm $LIBS/phonegap.zip
