@@ -31,6 +31,8 @@ var MyTaskListApp = function () {
             return function(event, data) {
                 console.log('toggling task ' + currentIndex);
                 MyTaskListApp.toggleCurrentTaskAsDone(currentIndex);
+
+                // This is required to make the event handler work properly
                 event.preventDefault();
             };
         };
@@ -166,6 +168,8 @@ $('#indexPage').live('pageinit', function() {
 $('#formPage').live('pageinit', function() {
     $('#saveButton').bind('tap', function(event, data) {
         MyTaskListApp.saveTask();
+        
+        // This is required to avoid weird redirections
         event.preventDefault();
     });
 });
