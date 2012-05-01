@@ -70,6 +70,7 @@ var MyTaskListApp = function () {
         var task = tasks[currentTaskIndex];
         $('#taskName').val(task.title);
         $('#taskDescription').val(task.description);
+        $('#taskDate').val(task.dueDate);
 
         var flip = $('#taskCompleted');
         var value = (task.done) ? 1 : 0;
@@ -82,6 +83,7 @@ var MyTaskListApp = function () {
         task.title = $('#taskName').val();
         task.description = $('#taskDescription').val();
         task.done = ($('#taskCompleted').val() === 'yes');
+        task.dueDate = $('#taskDate').val();
     };
 
     var deleteCurrentTask = function() {
