@@ -29,7 +29,6 @@ var MyTaskListApp = function () {
 
         var createMarkAsDoneTapHandler = function(currentIndex) {
             return function(event, data) {
-                console.log('toggling task ' + currentIndex);
                 MyTaskListApp.toggleCurrentTaskAsDone(currentIndex);
 
                 // This is required to make the event handler work properly
@@ -97,7 +96,6 @@ var MyTaskListApp = function () {
 
     return {
         Task: function () {
-            console.log('inside the Task constructor');
             this.title = 'New task';
             this.description = 'Empty description';
             this.dueDate = new Date();
@@ -105,10 +103,8 @@ var MyTaskListApp = function () {
         },
         
         addTask: function (task) {
-            console.log('adding a task');
             currentTaskIndex = tasks.length;
             tasks.push(task);
-            console.log('number of tasks: ' + tasks.length);
             syncStorage();
             displayTasks();
         },
@@ -133,8 +129,6 @@ var MyTaskListApp = function () {
         },
 
         setCurrentTask: function(index) {
-            console.log('======================');
-            console.log('selected index: ' + index);
             currentTaskIndex = index;
         },
 
@@ -160,7 +154,6 @@ $('#indexPage').live('pageinit', function() {
     MyTaskListApp.init();
 
     $('#addTaskButton').bind('tap', function(event, data) {
-        console.log('tapping the new task button');
         var newTask = new MyTaskListApp.Task();
         console.dir(newTask);
         MyTaskListApp.addTask(newTask);
