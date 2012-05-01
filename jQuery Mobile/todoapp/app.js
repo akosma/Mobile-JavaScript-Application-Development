@@ -59,7 +59,8 @@ var MyTaskListApp = function () {
             list.append(newLi);
         }
 
-        list.listview('refresh');
+        // The 'true' parameter is required for the inset effect to be applied
+        list.listview('refresh', true);
         $('#counter').html(tasks.length + ' tasks');
     };
 
