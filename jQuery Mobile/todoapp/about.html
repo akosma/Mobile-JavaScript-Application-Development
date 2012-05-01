@@ -2,9 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="pragma" content="no-cache">        
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1,
         user-scalable=no">
+        <meta http-equiv="expires" content="-1" />
         <link rel="stylesheet" href="../../_libs/jqm/jquery.mobile-1.1.0.min.css">
         <script src="../../_libs/jqm/jquery-1.7.2.min.js"></script>
         <script src="../../_libs/jqm/jquery.mobile-1.1.0.min.js"></script>
@@ -14,19 +17,15 @@
 
     <body>
 
-        <div data-role="page">
-
-
-            <div data-role="header">
+        <div data-role="page" data-theme="b" id="aboutPage">
+            <div data-role="header" data-position="fixed" data-theme="b">
                 <h1>About this App</h1>
             </div>
 
-            <div data-role="content">
+            <div data-role="content" data-theme="b">
                 <h1>Task List App by akosma</h1>
                 <p>This jQuery Mobile app has been created by Adrian Kosmaczewski</p>
             </div>
-
-
         </div>
 
     </body>

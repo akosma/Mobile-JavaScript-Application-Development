@@ -7,7 +7,7 @@ var MyTaskListApp = function () {
         if (localStorage) {
             var storedTasks = localStorage["tasks"];
             if (!storedTasks) {
-                localStorage["tasks"] = JSON.stringify(tasks);
+                syncStorage();
             } 
             else {
                 tasks = JSON.parse(storedTasks);
@@ -24,24 +24,39 @@ var MyTaskListApp = function () {
         var createTapHandler = function(currentIndex) {
             return function () {
                 MyTaskListApp.setCurrentTask(currentIndex);
-                $.mobile.changePage('form.html');
             };
         };
 
-        
+        var createMarkAsDoneTapHandler = function(currentIndex) {
+            return function() {
+                console.log('toggling task ' + currentIndex);
+                MyTaskListApp.toggleCurrentTaskAsDone(currentIndex);
+            };
+        };
+
         var list = $('#taskList');
         list.empty();
 
         for (var index = 0, length = tasks.length; index < length; ++index) {
             var task = tasks[index];
+            
+            var editLink = $('<a>');
+            editLink.attr('href', 'form.html');
+            editLink.attr('data-transition', 'slide');
+            editLink.on('tap', createTapHandler(index));
+            editLink.append(task.title);
+
+            var doneLink = $('<a>');
+            doneLink.on('tap', createMarkAsDoneTapHandler(index));
+
             var newLi = $('<li>');
-            newLi.on('tap', createTapHandler(index));
-            newLi.append(task.title);
+            newLi.append(editLink);
+            newLi.append(doneLink);
             list.append(newLi);
         }
 
         list.listview('refresh');
-
+        $('#counter').html(tasks.length + ' tasks');
     };
 
     var fillForm = function() {
@@ -64,6 +79,11 @@ var MyTaskListApp = function () {
 
     var deleteCurrentTask = function() {
         tasks.splice(currentTaskIndex, 1);
+    };
+
+    var toggleTask = function(index) {
+        var task = tasks[index];
+        task.done = !task.done;
     };
 
     return {
@@ -98,7 +118,10 @@ var MyTaskListApp = function () {
         saveTask: function() {
             updateCurrentTask();
             syncStorage();
-            $.mobile.changePage('index.html', { reverse: true });
+            $.mobile.changePage('index.html', {
+                transition: 'slide',
+                reverse: true
+            });
         },
 
         setCurrentTask: function(index) {
@@ -107,10 +130,19 @@ var MyTaskListApp = function () {
             currentTaskIndex = index;
         },
 
+        toggleCurrentTaskAsDone: function(index) {
+            toggleTask(index);
+            syncStorage();
+            displayTasks();
+        },
+
         removeTask: function() {
             deleteCurrentTask();
             syncStorage();
-            $.mobile.changePage('index.html', { reverse: true });
+            $.mobile.changePage('index.html', {
+                transition: 'slide',
+                reverse: true
+            });
         }
     };
 }();
@@ -118,7 +150,7 @@ var MyTaskListApp = function () {
 $('#indexPage').live('pageinit', function() {
     MyTaskListApp.init();
 
-    $('#addTaskButton').on('tap', function() {
+    $('#addTaskButton').bind('tap', function(event, data) {
         console.log('tapping the new task button');
         var newTask = new MyTaskListApp.Task();
         console.dir(newTask);
@@ -126,25 +158,24 @@ $('#indexPage').live('pageinit', function() {
     });
 });
 
-$('#formPage').live('pageinit', function() {
-    $('#saveButton').on('tap', function() {
-        MyTaskListApp.saveTask();
-    });
+$('#indexPage').live('pagebeforeshow', function () {
+    MyTaskListApp.refreshTasks();
 });
 
-$('#indexPage').live('pageshow', function () {
-    MyTaskListApp.refreshTasks();
+$('#formPage').live('pageinit', function() {
+    $('#saveButton').bind('tap', function(event, data) {
+        MyTaskListApp.saveTask();
+        event.preventDefault();
+    });
 });
 
 $('#formPage').live('pagebeforeshow', function () {
     MyTaskListApp.displayTask();
 });
 
-
 $('#deletePage').live('pageinit', function () {
-    $('#confirmButton').on('tap', function() {
+    $('#confirmButton').bind('tap', function(event, data) {
         MyTaskListApp.removeTask();
     });
 });
-
 

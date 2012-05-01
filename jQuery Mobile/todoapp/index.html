@@ -17,22 +17,25 @@
 
     <body>
 
-        <div data-role="page" id="indexPage">
-
-            <div data-role="header">
-                <a href="about.html" data-rel="dialog" 
+        <div data-role="page" id="indexPage" data-theme="b"> 
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="about.html" data-role="button" data-rel="dialog"
                     data-transition="fade">About</a>
-                <h1>Task List</h1>
-                <a href="form.html" id="addTaskButton" data-role="button" 
-                    data-icon="plus">New</a>
-            </div>
+                <h1>To Do List</h1>
+                <a href="form.html" id="addTaskButton" data-transition="slide" data-role="button" data-icon="plus"
+                    class="ui-btn-right">New</a>
+            </div> 
 
             <div data-role="content">
-                <ul data-role="listview" id="taskList" data-inset="true"
-                    data-filter="true">
+                <p>Current Tasks</p>
+                <ul data-role="listview" data-theme="c" data-inset="true" id="taskList">
                 </ul>
             </div>
-        </div>
+
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <h1 id="counter"></h1>
+            </div>
+        </div> 
 
     </body>
 </html>
