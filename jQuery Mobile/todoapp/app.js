@@ -127,11 +127,9 @@ $('#indexPage').live('pageinit', function() {
 });
 
 $('#formPage').live('pageinit', function() {
-
     $('#saveButton').on('tap', function() {
         MyTaskListApp.saveTask();
     });
-
 });
 
 $('#indexPage').live('pageshow', function () {
@@ -144,11 +142,9 @@ $('#formPage').live('pagebeforeshow', function () {
 
 
 $('#deletePage').live('pageinit', function () {
-
     $('#confirmButton').on('tap', function() {
         MyTaskListApp.removeTask();
     });
-
 });
 
 
