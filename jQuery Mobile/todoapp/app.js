@@ -22,15 +22,16 @@ var MyTaskListApp = function () {
     var displayTasks = function () {
 
         var createTapHandler = function(currentIndex) {
-            return function () {
+            return function (event, data) {
                 MyTaskListApp.setCurrentTask(currentIndex);
             };
         };
 
         var createMarkAsDoneTapHandler = function(currentIndex) {
-            return function() {
+            return function(event, data) {
                 console.log('toggling task ' + currentIndex);
                 MyTaskListApp.toggleCurrentTaskAsDone(currentIndex);
+                event.preventDefault();
             };
         };
 
@@ -43,11 +44,14 @@ var MyTaskListApp = function () {
             var editLink = $('<a>');
             editLink.attr('href', 'form.html');
             editLink.attr('data-transition', 'slide');
-            editLink.on('tap', createTapHandler(index));
+            editLink.bind('tap', createTapHandler(index));
             editLink.append(task.title);
 
             var doneLink = $('<a>');
-            doneLink.on('tap', createMarkAsDoneTapHandler(index));
+            doneLink.bind('tap', createMarkAsDoneTapHandler(index));
+
+            var className = (task.done) ? 'taskdone' : 'tasknotdone';
+            editLink.attr('class', className);
 
             var newLi = $('<li>');
             newLi.append(editLink);
@@ -101,13 +105,11 @@ var MyTaskListApp = function () {
             tasks.push(task);
             console.log('number of tasks: ' + tasks.length);
             syncStorage();
+            displayTasks();
         },
 
         init: function() {
             loadTasks();
-        },
-
-        refreshTasks: function () {
             displayTasks();
         },
 
@@ -118,6 +120,7 @@ var MyTaskListApp = function () {
         saveTask: function() {
             updateCurrentTask();
             syncStorage();
+            displayTasks();
             $.mobile.changePage('index.html', {
                 transition: 'slide',
                 reverse: true
@@ -139,6 +142,7 @@ var MyTaskListApp = function () {
         removeTask: function() {
             deleteCurrentTask();
             syncStorage();
+            displayTasks();
             $.mobile.changePage('index.html', {
                 transition: 'slide',
                 reverse: true
@@ -156,10 +160,6 @@ $('#indexPage').live('pageinit', function() {
         console.dir(newTask);
         MyTaskListApp.addTask(newTask);
     });
-});
-
-$('#indexPage').live('pagebeforeshow', function () {
-    MyTaskListApp.refreshTasks();
 });
 
 $('#formPage').live('pageinit', function() {
