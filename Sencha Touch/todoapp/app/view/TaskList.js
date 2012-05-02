@@ -30,6 +30,12 @@ Ext.define('ToDoListApp.view.TaskList', {
                 ui: 'plain',
                 action: 'createTask'
             }]
+        }, {
+            xtype: 'toolbar',
+            title: '',
+            docked: 'bottom',
+            ui: 'light',
+            id: 'taskCountBar'
         }]
     }
 });

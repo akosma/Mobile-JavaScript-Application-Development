@@ -10,7 +10,8 @@ Ext.define('ToDoListApp.controller.TaskController', {
             taskFormDeleteFieldset: '#taskFormDeleteFieldset',
             taskList: '#taskList',
             cancelButton: 'button[action=cancel]',
-            deleteButton: 'button[action=deleteTask]'
+            deleteButton: 'button[action=deleteTask]',
+            taskCountBar: '#taskCountBar'
         },
         control: {
             saveButton: {
@@ -34,6 +35,10 @@ Ext.define('ToDoListApp.controller.TaskController', {
                 tap: 'deleteTask'
             }
         }
+    },
+
+    launch: function () {
+        this.updateTaskCount();
     },
 
     deleteTask: function(button, e, eOpts) {
@@ -107,11 +112,18 @@ Ext.define('ToDoListApp.controller.TaskController', {
     },
 
     showList: function() {
+        this.updateTaskCount();
         Ext.Viewport.getLayout().setAnimation({
             type: 'slide',
             direction: 'right'
         });
         Ext.Viewport.setActiveItem(this.getTaskList());
+    },
+
+    updateTaskCount: function () {
+        var store = this.getTaskList().getStore();
+        var count = store.getCount();
+        this.getTaskCountBar().setTitle(count + ' tasks');
     }
 });
 
