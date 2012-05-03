@@ -6,8 +6,6 @@ Harness.configure({
     loaderPath    : { 'ToDoListApp' : '/Sencha%20Touch/todoapp/app' }
 });
 
-// NOTE: This harness assumes you have a local Sencha Touch 2.x SDK at the same place as your Siesta folder.
-
 Harness.start(
     {
         group : 'To Do List',
