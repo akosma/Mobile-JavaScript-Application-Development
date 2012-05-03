@@ -76,13 +76,13 @@ echo "#"
 echo "# Downloading PhoneGap"
 echo "#"
 echo "###############################"
-curl https://github.com/phonegap/phonegap/zipball/1.7.0rc1 --location --output $LIBS/phonegap.zip
+curl https://github.com/phonegap/phonegap/zipball/1.7.0 --location --output $LIBS/phonegap.zip
 
 # Extract the contents of the zip file
 unzip $LIBS/phonegap.zip -d $LIBS
 
 # Rename the folder
-mv $LIBS/phonegap-phonegap-1564354/ $LIBS/phonegap
+mv $LIBS/phonegap-phonegap-475bfd2/ $LIBS/phonegap
 
 # Remove the zip file
 rm $LIBS/phonegap.zip
