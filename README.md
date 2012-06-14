@@ -1,7 +1,7 @@
 JavaScript Mobile Application Development
 =========================================
 
-This repository contains the code of the "Mobile JavaScript Application
+This repository contains the code of the "JavaScript Mobile Application
 Development" book by Adrian Kosmaczewski, published by O'Reilly.
 
 ![Cover of "JavaScript Mobile Application Development" by Adrian Kosmaczewski at O'Reilly](http://akamaicovers.oreilly.com/images/0636920025252/cat.gif "Cover of the book")
