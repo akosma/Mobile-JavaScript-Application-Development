@@ -34,6 +34,7 @@ You can buy a copy of the book at these locations:
 - [Amazon.co.jp][9]
 - [Amazon.es][10]
 - [Amazon.it][11]
+- [Amazon.cn][15]
 
 License
 -------
@@ -74,5 +75,5 @@ License
 [12]:http://www.amazon.co.uk/Mobile-JavaScript-Application-Development-Kosmaczewski/dp/1449327850
 [13]:http://my.safaribooksonline.com/9781449327842?portal=oreilly&cid=orm-cat-readnow-9781449327842
 [14]:http://itunes.apple.com/us/book/mobile-javascript-application/id537701148?mt=11
-
+[15]:http://www.amazon.cn/Mobile-JavaScript-Application-Development-Kosmaczewski-Adrian/dp/1449327850
 
