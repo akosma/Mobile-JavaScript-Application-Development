@@ -36,6 +36,7 @@ You can buy a copy of the book at these locations:
 - [Amazon.it][11]
 - [Amazon.cn][15]
 - [Barnes and Noble](http://www.barnesandnoble.com/w/mobile-javascript-application-development-adrian-kosmaczewski/1112079017)
+- [Thalia.ch](http://www.thalia.ch/shop/buch-buecher-2/mehrvonartikel/mobile_javascript_application_development/adrian_kosmaczewski/ISBN1-4493-2785-0/ID31941323.html)
 
 License
 -------
